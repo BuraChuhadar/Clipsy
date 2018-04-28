@@ -1,0 +1,42 @@
+{
+  "name": "stupefy",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build -c.extraMetadata.main=build/electron.js"
+  },
+  "build": {
+    "appId": "com.stupefy.bc",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories":{
+      "buildResources": "assets"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^1.8.6",
+    "electron-builder": "^20.10.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "wait-on": "^2.1.0"
+  }
+}
